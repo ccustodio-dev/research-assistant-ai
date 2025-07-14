@@ -1,4 +1,4 @@
-# 🧠 Research Squad
+# 🧠 Research Assistant AI
 
 Your personal multi-agent research assistant — powered by LangChain, CrewAI, Flask, Celery, and Docker.
 
