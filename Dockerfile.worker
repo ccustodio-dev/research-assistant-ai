@@ -1,0 +1,8 @@
+FROM python:3.11-slim
+WORKDIR /app
+COPY celery_worker/ ./celery_worker/
+COPY crewai_flows/ ./crewai_flows/
+COPY shared/ ./shared/
+COPY requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt
+CMD ["celery", "-A", "celery_worker.tasks", "worker", "--loglevel=info"] 

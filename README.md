@@ -1,40 +1,37 @@
-# 🧠 Research Assistant AI
+# research-assistant-ai
 
-Your personal multi-agent research assistant — powered by LangChain, CrewAI, Flask, Celery, and Docker.
+A multi-agent research assistant using Flask (web API), Celery (async tasks), CrewAI (agent coordination), and LangChain (LLM-based research/summarization). Dockerized for easy deployment.
 
-This project automatically spins up a team of AI agents to research topics, summarize findings, and return a formatted report — all asynchronously and containerized for easy deployment.
+## Features
+- Flask web API for submitting research jobs
+- Celery for background task management
+- CrewAI for multi-agent orchestration
+- LangChain for LLM-based research and summarization
+- Redis as broker and result backend
+
+## Folder Structure
+```
+flask_app/
+celery_worker/
+crewai_flows/
+shared/
+Dockerfile.web
+Dockerfile.worker
+docker-compose.yml
+.env
+.env.example
+README.md
+```
+
+## Quickstart
+1. Copy `.env.example` to `.env` and fill in your API keys and config.
+2. Build and start all services:
+   ```sh
+   docker-compose up --build
+   ```
+3. Access the Flask API at `http://localhost:5000/api/submit`, etc.
 
 ---
 
-## 🚀 Features
-
-- 🌐 **Flask API** for submitting research requests
-- ⏱️ **Celery** queue for async processing
-- 🧑‍💼 **CrewAI**-managed team of agents:
-  - `Searcher`: Gathers relevant online sources
-  - `Summarizer`: Extracts and condenses key points
-  - `Formatter`: Compiles a clean, readable report
-- 🪄 **LangChain** for LLM integration and task chains
-- 🐳 Fully **Dockerized** and ready to deploy
-
----
-
-## 📦 Tech Stack
-
-| Component | Role |
-|----------|------|
-| **Flask** | Web API and result endpoints |
-| **Celery** | Background task queue |
-| **Redis** | Message broker + result backend |
-| **CrewAI** | Agent orchestration |
-| **LangChain** | LLM chains for research and summarization |
-| **Docker** | Deployment and isolation |
-
----
-
-## 🛠️ Setup
-
-### 1. Clone the repo
-```bash
-git clone https://github.com/yourusername/research-squad.git
-cd research-squad
+## License
+MIT

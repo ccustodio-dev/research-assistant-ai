@@ -1,0 +1,8 @@
+Flask
+Celery[redis]
+redis
+openai
+langchain
+langchain-openai
+crewai
+gunicorn  # For Flask production server 

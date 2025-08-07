@@ -1,0 +1,10 @@
+FROM python:3.11-slim
+WORKDIR /app
+COPY flask_app/ ./flask_app/
+COPY celery_worker/ ./celery_worker/
+COPY crewai_flows/ ./crewai_flows/
+COPY shared/ ./shared/
+COPY requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt
+EXPOSE 5000
+CMD ["gunicorn", "flask_app:app", "--bind", "0.0.0.0:5000"] 
