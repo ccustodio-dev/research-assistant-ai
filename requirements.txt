@@ -1,8 +1,14 @@
 Flask
+Flask-SQLAlchemy
+Flask-JWT-Extended
+Flask-CORS
 Celery[redis]
 redis
 openai
 langchain
 langchain-openai
 crewai
-gunicorn  # For Flask production server 
+gunicorn  # For Flask production server
+stripe  # For payment processing
+python-dotenv  # For environment variable management
+psycopg2-binary  # For PostgreSQL support (optional) 
